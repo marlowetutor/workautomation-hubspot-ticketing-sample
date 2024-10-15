@@ -60,73 +60,78 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 
 1. Create private app on HubSpot
 
-  With your account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
+With your account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
 
-  ![Create private app](images/create-private-app.png "Create private app")
+![Create private app](images/create-private-app.png "Create private app")
 
-  The scope should be set to "tickets"
+The scope should be set to "tickets"
 
-  ![Select scope](images/select-scope.png "Select scope")
+![Select scope](images/select-scope.png "Select scope")
 
 2. Obtain access token
 
-  Once the private app is created, we can now get the access token under the Auth tab
+Once the private app is created, we can now get the access token under the Auth tab
 
-  ![Obtain access token](images/obtain-access-token.png "Obtain access token")
+![Obtain access token](images/obtain-access-token.png "Obtain access token")
 
-  For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot provide rich API see [HubSpot API Docs](https://developers.hubspot.com/docs/api/crm/tickets "Opens the HubSpot API Docs page") to Create/Retrieve/Update/Delete tickets. For Demo purpose, we will only use the Creation API.
+For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot provide rich API see [HubSpot API Docs](https://developers.hubspot.com/docs/api/crm/tickets "Opens the HubSpot API Docs page") to Create/Retrieve/Update/Delete tickets. For Demo purpose, we will only use the Creation API.
 
 ### Create workbin, worktype and custom attributes on Genesys Cloud
-* Genesys Cloud creates workitems using API triggered events. Workitems belong to specific worktypes with custom attributes and are routed automatically to queues like an ACD interaction or are routed using workflows.
+
+Genesys Cloud creates workitems using API triggered events. Workitems belong to specific worktypes with custom attributes and are routed automatically to queues like an ACD interaction or are routed using workflows.
+
 1. Create workbin
-  ![Create workbin](images/create-workbin.png "Create workbin")
-  * Use this API to find workbin id, which will be used in the subsequent step [Genesys API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Genesys API Explorer").
-  * Look for Task Management → Query for workbins. 
-  * Execute the POST request with the following request body.
-  Post data:  
 
-  ```
-  {
-    "filters": [
-        {
-            "name": "name",
-            "type": "String",
-            "operator": "IN",
-            "values": ["cases"]
-        }
-    ]
-  }
-  ```
-  ![Get workbin id](images/get-workbin-id-api.png "Get workbin id")
+![Create workbin](images/create-workbin.png "Create workbin")
 
-  * Execute the POST request with the following request body
-  ![Get workbin id api result](images/get-workbin-id-api-result.png "Get workbin id api result")
+* Use this API to find workbin id, which will be used in the subsequent step [Genesys API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Genesys API Explorer").
+* Look for Task Management → Query for workbins. 
+* Execute the POST request with the following request body.
+
+Post data:
+```
+{
+  "filters": [
+      {
+          "name": "name",
+          "type": "String",
+          "operator": "IN",
+          "values": ["cases"]
+      }
+  ]
+}
+```
+
+![Get workbin id](images/get-workbin-id-api.png "Get workbin id")
+
+* Execute the POST request with the following request body
+![Get workbin id api result](images/get-workbin-id-api-result.png "Get workbin id api result")
 
 2. Create worktype
-  ![Create worktype](images/create-worktype.png "Create worktype")
-  * Make sure to use the workbin you have created above.
-  ![Select workbin](images/create-worktype-select-workbin.png "Select workbin")
-  * Use this API to find worktype id, which will be used in the subsequent step [Genesys API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Genesys API Explorer").
-  * Look for Task Management → Query for worktypes. 
-  * Execute the POST request with the following request body.
-  Post data:  
+![Create worktype](images/create-worktype.png "Create worktype")
+* Make sure to use the workbin you have created above.
+![Select workbin](images/create-worktype-select-workbin.png "Select workbin")
+* Use this API to find worktype id, which will be used in the subsequent step [Genesys API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Genesys API Explorer").
+* Look for Task Management → Query for worktypes. 
+* Execute the POST request with the following request body.
+Post data:  
 
-  ```
-  {
-    "filters": [
-        {
-            "name": "name",
-            "type": "String",
-            "operator": "IN",
-            "values": ["cases"]
-        }
-    ]
-  }
-  ```
-  ![Get worktype id](images/get-worktype-id-api.png "Get worktype id")
+```
+{
+  "filters": [
+      {
+          "name": "name",
+          "type": "String",
+          "operator": "IN",
+          "values": ["cases"]
+      }
+  ]
+}
+```
+![Get worktype id](images/get-worktype-id-api.png "Get worktype id")
 
-  * Execute the POST request with the following request body
-  ![Get worktype id api result](images/get-worktype-id-api-result.png "Get worktype id api result")
+* Execute the POST request with the following request body
+![Get worktype id api result](images/get-worktype-id-api-result.png "Get worktype id api result")
 
 3. Create custom attributes
   ![Create custom attributes](images/create-custom-attributes.png "Create custom attributes")
