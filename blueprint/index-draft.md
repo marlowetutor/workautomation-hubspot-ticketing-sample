@@ -60,8 +60,11 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 
 1. Create private app on HubSpot
 With your account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
+
 ![Create private app](images/create-private-app.png "Create private app")
+
 The scope should be set to "tickets"
+
 ![Select scope](images/select-scope.png "Select scope")
 
 2. Obtain access token
