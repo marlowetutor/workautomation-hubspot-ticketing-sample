@@ -103,8 +103,6 @@ Post data:
 ```
 
 ![Get workbin id](images/get-workbin-id-api.png "Get workbin id")
-
-* Execute the POST request with the following request body
 ![Get workbin id api result](images/get-workbin-id-api-result.png "Get workbin id api result")
 
 2. Create worktype
