@@ -13,12 +13,18 @@ Genesys Cloud blueprints were built to help you jump-start building an applicati
 Blueprints are meant to outline how to build and deploy your solutions, not a production-ready turn-key solution.
  
 For more details on Genesys Cloud blueprint support and practices 
-please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq)sheet.
+please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq) sheet.
 :::
 
 This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
 
 ![Work Automation HubSpot Ticketing overview](images/overview.png "Work Automation HubSpot Ticketing overview")
+
+## Scenario
+
+## Solution
+
+## Contents
 
 ## Solution components
 
@@ -36,23 +42,34 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 
 * Create a HubSpot account. For more information, see [Get started with HubSpot](https://app.hubspot.com/signup-hubspot/crm?hubs_signup-cta=login-signup-cta&step=landing_page "Opens the HubSpot account creation page").
 
+### Development tools running in your local environment
+
 ## Implementation steps
+
+1. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
+2. [Create a private app on HubSpot and obtain access token](#clone-the-github-repository "Goes to the Create a private app on HubSpot and obtain access token section")
+3. [Create workbin, worktype and custom attributes on Genesys Cloud](#clone-the-github-repository "Goes to the Create workbin, worktype and custom attributes on Genesys Cloud section")
+4. [Add Client Application integration](#clone-the-github-repository "Goes to the Add Client Application integration section")
+5. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
+6. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
+7. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
+
+### Clone the GitHub repository
 
 ### Create a private app on HubSpot and obtain access token
 
 1. Create private app on HubSpot
-  * With you account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
-  ![Create private app](images/create-private-app.png "Create private app")
-  * The scope should be set to "tickets"
-  ![Select scope](images/select-scope.png "Select scope")
+With your account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
+![Create private app](images/create-private-app.png "Create private app")
+The scope should be set to "tickets"
+![Select scope](images/select-scope.png "Select scope")
 
 2. Obtain access token
-  * Once the private app is created, we can now get the access token under the Auth tab
-  ![Obtain access token](images/obtain-access-token.png "Obtain access token")
-  * For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot provide rich API see [HubSpot API Docs](https://developers.hubspot.com/docs/api/crm/tickets "Opens the HubSpot API Docs page") to Create/Retrieve/Update/Delete tickets. For Demo purpose, we will only use the Creation API.
+Once the private app is created, we can now get the access token under the Auth tab
+![Obtain access token](images/obtain-access-token.png "Obtain access token")
+For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot provide rich API see [HubSpot API Docs](https://developers.hubspot.com/docs/api/crm/tickets "Opens the HubSpot API Docs page") to Create/Retrieve/Update/Delete tickets. For Demo purpose, we will only use the Creation API.
 
-### Manual Configuration for Genesys Cloud objects
-#### Create workbin, worktype and custom attributes on Genesys Cloud
+### Create workbin, worktype and custom attributes on Genesys Cloud
 * Genesys Cloud creates workitems using API triggered events. Workitems belong to specific worktypes with custom attributes and are routed automatically to queues like an ACD interaction or are routed using workflows.
 1. Create workbin
   ![Create workbin](images/create-workbin.png "Create workbin")
@@ -99,15 +116,15 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
     ]
   }
   ```
-  ![Get worktype id](images/get-worktype-api.png "Get worktype id")
+  ![Get worktype id](images/get-worktype-id-api.png "Get worktype id")
 
   * Execute the POST request with the following request body
-  ![Get worktype id api result](images/get-worktype-api-result.png "Get worktype id api result")
+  ![Get worktype id api result](images/get-worktype-id-api-result.png "Get worktype id api result")
 
 3. Create custom attributes
   ![Create custom attributes](images/create-custom-attributes.png "Create custom attributes")
 
-#### Add Client Application integration and 
+### Add Client Application integration
 1. To get the HubSpot URL to use for the Client Application, on HubSpot page search "tickets".
 ![Search hubspot tickets page](images/search-hubspot-tickets-page.png "Search hubspot tickets page")
 
@@ -127,19 +144,19 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 ![Open client application](images/open-client-application.png "Open client application")
   * Make sure you opened the HubSpot page on the same window with the Genesys Cloud
 
-#### Add HB Web Service integration
+### Add HB Web Service integration
 * Just need to add integration, keep the default configuration.
 ![Create HB Web Service integration](images/create-hb-web-service.png "Create HB Web Service integration")
 
-#### Add oAuth for work automation
+### Add oAuth for work automation
 * Before adding Data Action for Work Automation API, need to add Oauth and Integration first. For Oauth, please add role have permission on "workitem".
 ![Add oAuth](images/add-oauth.png "Add oAuth")
 
-#### Add integration for work automation
+### Add integration for work automation
 * For Data Action integration, need to use above values to configure client Id and Client Secret for Genesys Cloud Data Actions integration.
 ![Create data action integration](images/create-data-action-integration.png "Create data action integration")
 
-#### Add DataAction for creating HubSpot tickets and workitem
+### Add DataAction for creating HubSpot tickets and workitem
 1. Add DataAction for creating HubSpot tickets
   * Inside the src folder, edit the 'Add DataAction for creating HubSpot tickets.json' to replace Authorization with your API key from the created HubSpot private app.
   ```
@@ -282,17 +299,17 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
   ```
   ![Import JSON create workitem](images/import-json-create-workitem.png "Import JSON create workitem")
 
-#### Import JSON to script
+### Import JSON to script
 * In this blueprint, we use script to insert Hubsport Ticket and workitem. You need to import below json to script.
 
 * After import script, you need to configure Actions in the script, associate with above hubspot ticket insert and New workitem dataaction, also need to update the workbinid and worktypeid with previous creation.
 
-#### Import Architect Flow for Inbound Call
+### Import Architect Flow for Inbound Call
 * You can import Inbound Case_v4-0.i3InboundFlow in your ORG. For Demo/Script integration, need to set screen popup and related input for Inbound Script. You can get the externalcontactID from External Contacts.
 
-#### Configure DID with Inbound Call Flow
+### Configure DID with Inbound Call Flow
 
-#### Make a test call
+### Make a test call
 * Agent receive the call
 
 * Agent submit the workitem
@@ -305,7 +322,7 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 
 * HubSpot ticket view
 
-#### Appendix other use case
+## Appendix other use case
 1. Trigger and Workflow
   * A trigger is a resource within Genesys Cloud that allows customers to configure a reaction to specific events that occur within Genesys Cloud. The actions are workflows that you can create using Architect. We can use the trigger+workflow to do advanced workitems routing after Agents process workitem. 
   
