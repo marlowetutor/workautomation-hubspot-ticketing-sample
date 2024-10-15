@@ -73,10 +73,10 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
     ]
   }
   ```
-  ![Get workbin id](images/get-workbin-api.png "Get workbin id")
+  ![Get workbin id](images/get-workbin-id-api.png "Get workbin id")
 
   * Execute the POST request with the following request body
-  ![Get workbin id api result](images/get-workbin-api-result.png "Get workbin id api result")
+  ![Get workbin id api result](images/get-workbin-id-api-result.png "Get workbin id api result")
 
 2. Create worktype
   ![Create worktype](images/create-worktype.png "Create worktype")
