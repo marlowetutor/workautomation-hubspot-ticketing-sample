@@ -59,6 +59,7 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 ### Create a private app on HubSpot and obtain access token
 
 1. Create private app on HubSpot
+
 With your account logged in on HubSpot, go to Settings → Account Management → Integrations → Private Apps
 
 ![Create private app](images/create-private-app.png "Create private app")
@@ -68,8 +69,11 @@ The scope should be set to "tickets"
 ![Select scope](images/select-scope.png "Select scope")
 
 2. Obtain access token
+
 Once the private app is created, we can now get the access token under the Auth tab
+
 ![Obtain access token](images/obtain-access-token.png "Obtain access token")
+
 For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot provide rich API see [HubSpot API Docs](https://developers.hubspot.com/docs/api/crm/tickets "Opens the HubSpot API Docs page") to Create/Retrieve/Update/Delete tickets. For Demo purpose, we will only use the Creation API.
 
 ### Create workbin, worktype and custom attributes on Genesys Cloud
