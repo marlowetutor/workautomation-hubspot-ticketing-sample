@@ -6,12 +6,12 @@ icon: blueprint
 image: images/banner.png
 category: 6
 summary: |
-  This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
+This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
 ---
 :::{"alert":"primary","title":"About Genesys Cloud Blueprints","autoCollapse":false} 
 Genesys Cloud blueprints were built to help you jump-start building an application or integrating with a third-party partner. 
 Blueprints are meant to outline how to build and deploy your solutions, not a production-ready turn-key solution.
- 
+
 For more details on Genesys Cloud blueprint support and practices 
 please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq) sheet.
 :::
@@ -80,7 +80,7 @@ For integration purposes, we will utilize the HubSpot Insert Ticket API. Hubspot
 
 Genesys Cloud creates workitems using API triggered events. Workitems belong to specific worktypes with custom attributes and are routed automatically to queues like an ACD interaction or are routed using workflows.
 
-1. Create workbin
+1. Create workbin 
 
 ![Create workbin](images/create-workbin.png "Create workbin")
 
@@ -91,14 +91,14 @@ Genesys Cloud creates workitems using API triggered events. Workitems belong to 
 Post data:
 ```
 {
-  "filters": [
-      {
-          "name": "name",
-          "type": "String",
-          "operator": "IN",
-          "values": ["cases"]
-      }
-  ]
+"filters": [
+    {
+        "name": "name",
+        "type": "String",
+        "operator": "IN",
+        "values": ["cases"]
+    }
+]
 }
 ```
 
@@ -106,9 +106,13 @@ Post data:
 ![Get workbin id api result](images/get-workbin-id-api-result.png "Get workbin id api result")
 
 2. Create worktype
+
 ![Create worktype](images/create-worktype.png "Create worktype")
+
 * Make sure to use the workbin you have created above.
+
 ![Select workbin](images/create-worktype-select-workbin.png "Select workbin")
+
 * Use this API to find worktype id, which will be used in the subsequent step [Genesys API Explorer](https://developer.genesys.cloud/devapps/api-explorer "Genesys API Explorer").
 * Look for Task Management → Query for worktypes. 
 * Execute the POST request with the following request body.
@@ -116,14 +120,14 @@ Post data:
 
 ```
 {
-  "filters": [
-      {
-          "name": "name",
-          "type": "String",
-          "operator": "IN",
-          "values": ["cases"]
-      }
-  ]
+"filters": [
+    {
+        "name": "name",
+        "type": "String",
+        "operator": "IN",
+        "values": ["cases"]
+    }
+]
 }
 ```
 ![Get worktype id](images/get-worktype-id-api.png "Get worktype id")
@@ -132,7 +136,7 @@ Post data:
 ![Get worktype id api result](images/get-worktype-id-api-result.png "Get worktype id api result")
 
 3. Create custom attributes
-  ![Create custom attributes](images/create-custom-attributes.png "Create custom attributes")
+![Create custom attributes](images/create-custom-attributes.png "Create custom attributes")
 
 ### Add Client Application integration
 1. To get the HubSpot URL to use for the Client Application, on HubSpot page search "tickets".
@@ -152,7 +156,7 @@ Post data:
 
 6. Open the Client Application under Apps → Application
 ![Open client application](images/open-client-application.png "Open client application")
-  * Make sure you opened the HubSpot page on the same window with the Genesys Cloud
+* Make sure you opened the HubSpot page on the same window with the Genesys Cloud
 
 ### Add HB Web Service integration
 * Just need to add integration, keep the default configuration.
@@ -168,146 +172,146 @@ Post data:
 
 ### Add DataAction for creating HubSpot tickets and workitem
 1. Add DataAction for creating HubSpot tickets
-  * Inside the src folder, edit the 'Add DataAction for creating HubSpot tickets.json' to replace Authorization with your API key from the created HubSpot private app.
-  ```
-  {
-    "name": "Hubspot insert ticket",
-    "integrationType": "custom-rest-actions",
-    "actionType": "custom",
-    "config": {
-      "request": {
-        "requestUrlTemplate": "https://api.hubapi.com/crm/v3/objects/tickets",
-        "requestType": "POST",
-        "headers": {
-          "Authorization": "Bearer pat-na1-9de5c5c1-XXXX-XXXX-a417-716a3ae3e998",
-          "Content-Type": "application/json"
+* Inside the src folder, edit the 'Add DataAction for creating HubSpot tickets.json' to replace Authorization with your API key from the created HubSpot private app.
+```
+{
+  "name": "Hubspot insert ticket",
+  "integrationType": "custom-rest-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "https://api.hubapi.com/crm/v3/objects/tickets",
+      "requestType": "POST",
+      "headers": {
+        "Authorization": "Bearer pat-na1-9de5c5c1-XXXX-XXXX-a417-716a3ae3e998",
+        "Content-Type": "application/json"
+      },
+      "requestTemplate": "{\"properties\": {\"hs_pipeline\": \"${input.hs_pipeline}\", \"hs_pipeline_stage\": \"${input.hs_pipeline_stage}\", \"hs_ticket_priority\": \"${input.hs_ticket_priority}\", \"subject\": \"${input.subject}\" }   }"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "hs_pipeline": {
+            "type": "string"
+          },
+          "hs_pipeline_stage": {
+            "type": "string"
+          },
+          "hs_ticket_priority": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
         },
-        "requestTemplate": "{\"properties\": {\"hs_pipeline\": \"${input.hs_pipeline}\", \"hs_pipeline_stage\": \"${input.hs_pipeline_stage}\", \"hs_ticket_priority\": \"${input.hs_ticket_priority}\", \"subject\": \"${input.subject}\" }   }"
-      },
-      "response": {
-        "translationMap": {},
-        "translationMapDefaults": {},
-        "successTemplate": "${rawResult}"
+        "additionalProperties": true
       }
     },
-    "contract": {
-      "input": {
-        "inputSchema": {
-          "type": "object",
-          "properties": {
-            "hs_pipeline": {
-              "type": "string"
-            },
-            "hs_pipeline_stage": {
-              "type": "string"
-            },
-            "hs_ticket_priority": {
-              "type": "string"
-            },
-            "subject": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": true
-        }
-      },
-      "output": {
-        "successSchema": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": true
-        }
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
       }
-    },
-    "secure": false
-  }
-  ```
-  * Import the json to Actions
-  ![Import JSON create ticket](images/import-json-create-ticket.png "Import JSON create ticket")
+    }
+  },
+  "secure": false
+}
+```
+* Import the json to Actions
+![Import JSON create ticket](images/import-json-create-ticket.png "Import JSON create ticket")
 
 2. Add DataAction for creating workitem
-  * Inside the src folder, import the 'Add Dataaction for creating workitem.json' to Actions which can be used in the Architect or Script for Demo purpose.
-  ```
-  {
-    "name": "New WorkItem",
-    "integrationType": "purecloud-data-actions",
-    "actionType": "custom",
-    "config": {
-      "request": {
-        "requestUrlTemplate": "/api/v2/taskmanagement/workitems",
-        "requestType": "POST",
-        "headers": {},
-        "requestTemplate": "{\"name\": \"${input.name}\" ,  \"priority\": ${input.priority}, \"workbinId\": \"${input.workbinId}\", \"typeId\":  \"${input.typeId}\", \"externalContactId\": \"${input.externalcontactid}\"  ,\"customFields\" : {\"casetype_text\": \"${input.casetype_text}\" , \"customername_text\": \"${input.customername_text}\" , \"customernumber_text\": \"${input.customernumber_text}\", \"memo_longtext\": \"${input.memo_longtext}\" , \"hb_ticketid_text\": \"${input.hb_ticketid}\", \"hb_url_url\": \"${input.hb_url}\"}}"
-      },
-      "response": {
-        "translationMap": {},
-        "translationMapDefaults": {},
-        "successTemplate": "${rawResult}"
+* Inside the src folder, import the 'Add Dataaction for creating workitem.json' to Actions which can be used in the Architect or Script for Demo purpose.
+```
+{
+  "name": "New WorkItem",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/taskmanagement/workitems",
+      "requestType": "POST",
+      "headers": {},
+      "requestTemplate": "{\"name\": \"${input.name}\" ,  \"priority\": ${input.priority}, \"workbinId\": \"${input.workbinId}\", \"typeId\":  \"${input.typeId}\", \"externalContactId\": \"${input.externalcontactid}\"  ,\"customFields\" : {\"casetype_text\": \"${input.casetype_text}\" , \"customername_text\": \"${input.customername_text}\" , \"customernumber_text\": \"${input.customernumber_text}\", \"memo_longtext\": \"${input.memo_longtext}\" , \"hb_ticketid_text\": \"${input.hb_ticketid}\", \"hb_url_url\": \"${input.hb_url}\"}}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "source",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "workbinId": {
+            "type": "string"
+          },
+          "typeId": {
+            "type": "string"
+          },
+          "casetype_text": {
+            "type": "string"
+          },
+          "customername_text": {
+            "type": "string"
+          },
+          "customernumber_text": {
+            "type": "string"
+          },
+          "memo_longtext": {
+            "type": "string"
+          },
+          "hb_ticketid": {
+            "type": "string"
+          },
+          "externalcontactid": {
+            "type": "string"
+          },
+          "hb_url": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
       }
     },
-    "contract": {
-      "input": {
-        "inputSchema": {
-          "title": "source",
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "priority": {
-              "type": "integer"
-            },
-            "workbinId": {
-              "type": "string"
-            },
-            "typeId": {
-              "type": "string"
-            },
-            "casetype_text": {
-              "type": "string"
-            },
-            "customername_text": {
-              "type": "string"
-            },
-            "customernumber_text": {
-              "type": "string"
-            },
-            "memo_longtext": {
-              "type": "string"
-            },
-            "hb_ticketid": {
-              "type": "string"
-            },
-            "externalcontactid": {
-              "type": "string"
-            },
-            "hb_url": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": true
-        }
-      },
-      "output": {
-        "successSchema": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": true
-        }
+    "output": {
+      "successSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
       }
-    },
-    "secure": false
-  }
-  ```
-  ![Import JSON create workitem](images/import-json-create-workitem.png "Import JSON create workitem")
+    }
+  },
+  "secure": false
+}
+```
+![Import JSON create workitem](images/import-json-create-workitem.png "Import JSON create workitem")
 
 ### Import JSON to script
 * In this blueprint, we use script to insert Hubsport Ticket and workitem. You need to import below json to script.
@@ -334,19 +338,18 @@ Post data:
 
 ## Appendix other use case
 1. Trigger and Workflow
-  * A trigger is a resource within Genesys Cloud that allows customers to configure a reaction to specific events that occur within Genesys Cloud. The actions are workflows that you can create using Architect. We can use the trigger+workflow to do advanced workitems routing after Agents process workitem. 
-  
-  Usecase:
+* A trigger is a resource within Genesys Cloud that allows customers to configure a reaction to specific events that occur within Genesys Cloud. The actions are workflows that you can create using Architect. We can use the trigger+workflow to do advanced workitems routing after Agents process workitem. 
 
-  Agent receive the workitem, Change Status from "Open" or any other status to "On Hold", then park it.
-  Matching the predefined trigger, launch the configured Architect workflow.
-  Worflow get the JSON data, and send a email to a User.
+Usecase:
 
-  1. Create an architect workflow
+Agent receive the workitem, Change Status from "Open" or any other status to "On Hold", then park it.
+Matching the predefined trigger, launch the configured Architect workflow.
+Worflow get the JSON data, and send a email to a User.
 
-  2. Create a trigger
+1. Create an architect workflow
 
-  3. Assign workitem to Queue in workflow
+2. Create a trigger
+
+3. Assign workitem to Queue in workflow
 
 ### Terraform Configuration for Genesys Cloud objects
- 

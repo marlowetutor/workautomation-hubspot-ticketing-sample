@@ -1,0 +1,421 @@
+TRACE: 2024/12/16 09:43:57 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: de08035d-a325-4798-a9c8-4c0bd1539745
+	User-Agent: GC Terraform Provider/1.54.0
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Content-Type: application/json
+	Content-Length: 147
+	Vary: Accept-Encoding
+	Date: Mon, 16 Dec 2024 01:43:57 GMT
+	Critical-Origin-Trial: Tpcd
+	Inin-Correlation-Id: 25675b35-12d3-460a-83eb-4e7f267a2207
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Cache-Control: no-cache, no-store, must-revalidate
+CorrelationId: 25675b35-12d3-460a-83eb-4e7f267a2207
+DEBUG: 2024/12/16 09:43:57 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: de08035d-a325-4798-a9c8-4c0bd1539745
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: 8605b6f9-4b76-4f4d-bc6b-962bfa2f51af
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Content-Type: application/json
+	Content-Length: 147
+	Critical-Origin-Trial: Tpcd
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Vary: Accept-Encoding
+	Cache-Control: no-cache, no-store, must-revalidate
+	Inin-Correlation-Id: 335d2370-ebf3-42bd-be32-b530d73f48b6
+	Strict-Transport-Security: max-age=31536000
+CorrelationId: 335d2370-ebf3-42bd-be32-b530d73f48b6
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 8605b6f9-4b76-4f4d-bc6b-962bfa2f51af
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 0deff811-8718-4132-b001-94ec3f46f85a
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Critical-Origin-Trial: Tpcd
+	Inin-Correlation-Id: 3aa406fc-a172-46a2-bbfc-e773ab9c32b0
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Vary: Accept-Encoding
+	Content-Type: application/json
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+CorrelationId: 3aa406fc-a172-46a2-bbfc-e773ab9c32b0
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 0deff811-8718-4132-b001-94ec3f46f85a
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: 7c175c30-e3de-45a9-992a-fda30ce01589
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Inin-Correlation-Id: 6c519c77-d139-4332-a1e4-d8244f7c8794
+	Strict-Transport-Security: max-age=31536000
+	Vary: Accept-Encoding
+	Content-Type: application/json
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+	Critical-Origin-Trial: Tpcd
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+CorrelationId: 6c519c77-d139-4332-a1e4-d8244f7c8794
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 7c175c30-e3de-45a9-992a-fda30ce01589
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: 6b092a28-a61a-457f-806b-e8df1a6ed009
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Cache-Control: no-cache, no-store, must-revalidate
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Vary: Accept-Encoding
+	Content-Type: application/json
+	Content-Length: 147
+	Inin-Correlation-Id: 36e9bd99-8eba-4f4b-ae5d-36038e643d31
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Critical-Origin-Trial: Tpcd
+CorrelationId: 36e9bd99-8eba-4f4b-ae5d-36038e643d31
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: 6b092a28-a61a-457f-806b-e8df1a6ed009
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 25ebdcbd-6804-4a28-8bbb-ff314b895549
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Inin-Correlation-Id: 8acda10e-78db-496d-8a3d-df2c1dff59cf
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Content-Type: application/json
+	Critical-Origin-Trial: Tpcd
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Vary: Accept-Encoding
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+CorrelationId: 8acda10e-78db-496d-8a3d-df2c1dff59cf
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Tf-Correlation-Id: 25ebdcbd-6804-4a28-8bbb-ff314b895549
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 68ad70c0-db7d-4879-91e4-0ce8b497e9f9
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Cache-Control: no-cache, no-store, must-revalidate
+	Inin-Correlation-Id: 7e74acca-1789-4f43-8c07-95392aae8095
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Content-Type: application/json
+	Content-Length: 147
+	Critical-Origin-Trial: Tpcd
+	Strict-Transport-Security: max-age=31536000
+	Vary: Accept-Encoding
+CorrelationId: 7e74acca-1789-4f43-8c07-95392aae8095
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 68ad70c0-db7d-4879-91e4-0ce8b497e9f9
+	User-Agent: GC Terraform Provider/1.54.0
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 4f38d77f-07da-40a5-b99c-8a9b09cc3bf8
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Content-Type: application/json
+	Critical-Origin-Trial: Tpcd
+	Vary: Accept-Encoding
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+	Inin-Correlation-Id: f4a6d646-44d1-42db-ac95-1a7eeeac114a
+CorrelationId: f4a6d646-44d1-42db-ac95-1a7eeeac114a
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 4f38d77f-07da-40a5-b99c-8a9b09cc3bf8
+	User-Agent: GC Terraform Provider/1.54.0
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: b731eee0-e430-4a39-aba1-df2776a5c082
+	User-Agent: GC Terraform Provider/1.54.0
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Strict-Transport-Security: max-age=31536000
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Content-Type: application/json
+	Critical-Origin-Trial: Tpcd
+	Inin-Correlation-Id: 6a093a97-ba75-40b9-ad98-5bdbf426cbce
+	Vary: Accept-Encoding
+CorrelationId: 6a093a97-ba75-40b9-ad98-5bdbf426cbce
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: b731eee0-e430-4a39-aba1-df2776a5c082
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: ca21ece1-eb9d-4350-bec9-8098c40c095e
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Content-Length: 147
+	Cache-Control: no-cache, no-store, must-revalidate
+	Critical-Origin-Trial: Tpcd
+	Inin-Correlation-Id: 6dc3b725-330c-4fa9-8c58-7fc84e724350
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Content-Type: application/json
+	Vary: Accept-Encoding
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+CorrelationId: 6dc3b725-330c-4fa9-8c58-7fc84e724350
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: ca21ece1-eb9d-4350-bec9-8098c40c095e
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 368b2cc8-a22b-4460-ad39-360624e0fc00
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Cache-Control: no-cache, no-store, must-revalidate
+	Inin-Correlation-Id: a14c7d3c-1900-4363-a647-9052f0ae5874
+	Vary: Accept-Encoding
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Content-Type: application/json
+	Origin-Trial: AqOjJ0UPIDlFmiW3hQcsQiGOIaWIXZRDDWLBHSQfBL84febGHre2kEqyi7ODn67QBfDd2AReJYkBe/YBEEFezgAAAABgeyJvcmlnaW4iOiJodHRwczovL215cHVyZWNsb3VkLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHBjZCIsImV4cGlyeSI6MTczNTM0Mzk5OSwiaXNTdWJkb21haW4iOnRydWV9
+	Strict-Transport-Security: max-age=31536000
+	Content-Length: 147
+	Critical-Origin-Trial: Tpcd
+CorrelationId: a14c7d3c-1900-4363-a647-9052f0ae5874
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://login.mypurecloud.com/oauth/token
+Method: POST
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Content-Type: application/x-www-form-urlencoded
+	Authorization: [REDACTED]
+	Tf-Correlation-Id: 368b2cc8-a22b-4460-ad39-360624e0fc00
+Body: grant_type=client_credentials
+=== RESPONSE ===
+Status: 200
+TRACE: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://api.mypurecloud.com/api/v2/organizations/me
+Method: GET
+Headers: 
+	Tf-Correlation-Id: 4c5bf87d-5db1-4e26-a067-c7eaa68e20e9
+	User-Agent: GC Terraform Provider/1.54.0
+	Authorization: [REDACTED]
+	Content-Type: application/json
+	Accept: application/json
+=== RESPONSE ===
+Status: 200
+Headers: 
+	Content-Type: application/json
+	Strict-Transport-Security: max-age=31536000; includeSubDomains
+	Via: 1.1 a4830e13106c7fdebdc2298346e15b76.cloudfront.net (CloudFront)
+	X-Amz-Cf-Pop: MNL52-P2
+	X-Amz-Cf-Id: yge0YC4IPs3Xph7y9wGpvuVDeIZOKznb1jILfaGbhaltcvSnjbsJ-w==
+	Content-Length: 610
+	Date: Mon, 16 Dec 2024 01:43:58 GMT
+	Cache-Control: no-cache, no-store, must-revalidate
+	Inin-Correlation-Id: e2de593f-e55a-476e-b244-9bbda06c0eaa
+	X-Cache: Miss from cloudfront
+CorrelationId: e2de593f-e55a-476e-b244-9bbda06c0eaa
+DEBUG: 2024/12/16 09:43:58 
+=== REQUEST ===
+URL: https://api.mypurecloud.com/api/v2/organizations/me
+Method: GET
+Headers: 
+	User-Agent: GC Terraform Provider/1.54.0
+	Authorization: [REDACTED]
+	Content-Type: application/json
+	Accept: application/json
+	Tf-Correlation-Id: 4c5bf87d-5db1-4e26-a067-c7eaa68e20e9
+=== RESPONSE ===
+Status: 200
