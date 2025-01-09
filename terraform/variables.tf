@@ -22,3 +22,8 @@ variable "email" {
   type        = string
   description = "The Account Email address to be used by Groups"
 }
+
+variable "bearer_token" {
+  type        = string
+  description = "The Bearer Token to be used by Data Actions"
+}

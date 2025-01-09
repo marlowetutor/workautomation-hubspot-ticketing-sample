@@ -5,17 +5,27 @@ data "genesyscloud_user" "user" {
 // Create a Data Action integration
 module "data_action" {
   source                          = "git::https://github.com/GenesysCloudDevOps/public-api-data-actions-integration-module?ref=main"
-  integration_name                = " Interaction"
+  integration_name                = "HubSpot Interaction"
   integration_creds_client_id     = var.client_id
   integration_creds_client_secret = var.client_secret
 }
 
 // Add DataAction for creating HubSpot tickets
-module "get_agent_id_data_action" {
-  source             = "./modules/actions/hubspot-interaction"
-  action_name        = "HubSpot Interaction"
+module "create-hubspot-ticket" {
+  source             = "./modules/actions/create-hubspot-ticket"
+  action_name        = "Create HubSpot ticket action"
   action_category    = "${module.data_action.integration_name}"
   integration_id     = "${module.data_action.integration_id}"
+  bearer_token       = var.bearer_token
+}
+
+// Add DataAction for creating workitem
+module "create-workitem" {
+  source             = "./modules/actions/create-workitem"
+  action_name        = "Create workitem action"
+  action_category    = "${module.data_action.integration_name}"
+  integration_id     = "${module.data_action.integration_id}"
+  bearer_token       = var.bearer_token
 }
 
 // Add group
