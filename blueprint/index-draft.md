@@ -3,28 +3,15 @@ title: Integrate work automation with HubSpot
 author: marlowe.tutor
 indextype: blueprint
 icon: blueprint
-image: images/banner.png
+image: images/overview.png
 category: 6
 summary: |
-This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
+  This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
 ---
-:::{"alert":"primary","title":"About Genesys Cloud Blueprints","autoCollapse":false} 
-Genesys Cloud blueprints were built to help you jump-start building an application or integrating with a third-party partner. 
-Blueprints are meant to outline how to build and deploy your solutions, not a production-ready turn-key solution.
-
-For more details on Genesys Cloud blueprint support and practices 
-please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq) sheet.
-:::
 
 This Genesys Cloud Developer Blueprint explains how to integrate work automation with HubSpot.
 
 ![Work Automation HubSpot Ticketing overview](images/overview.png "Work Automation HubSpot Ticketing overview")
-
-## Scenario
-
-## Solution
-
-## Contents
 
 ## Solution components
 
@@ -42,19 +29,57 @@ This Genesys Cloud Developer Blueprint explains how to integrate work automation
 
 * Create a HubSpot account. For more information, see [Get started with HubSpot](https://app.hubspot.com/signup-hubspot/crm?hubs_signup-cta=login-signup-cta&step=landing_page "Opens the HubSpot account creation page").
 
-### Development tools running in your local environment
-
 ## Implementation steps
 
-1. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
-2. [Create a private app on HubSpot and obtain access token](#clone-the-github-repository "Goes to the Create a private app on HubSpot and obtain access token section")
-3. [Create workbin, worktype and custom attributes on Genesys Cloud](#clone-the-github-repository "Goes to the Create workbin, worktype and custom attributes on Genesys Cloud section")
-4. [Add Client Application integration](#clone-the-github-repository "Goes to the Add Client Application integration section")
-5. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
-6. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
-7. [Clone the GitHub repository](#clone-the-github-repository "Goes to the Clone the GitHub repository section")
+You can implement Genesys Cloud objects manually or with Terraform.
+* [Configure Genesys Cloud using Terraform](#configure-genesys-cloud-using-terraform)
+* [Configure Genesys Cloud manually](#configure-genesys-cloud-manually)
 
-### Clone the GitHub repository
+### Download the repository containing the project files
+Clone the [workautomation-hubspot-ticketing-sample repository](https://github.com/GenesysCloudBlueprints/workautomation-hubspot-ticketing-sample "Goes to the workautomation-hubspot-ticketing-sample repository") in GitHub.
+
+## Configure Genesys Cloud using Terraform
+
+### Set up Genesys Cloud
+
+1. Set the following environment variables in a terminal window before you run this project using the Terraform provider:
+
+   * `GENESYSCLOUD_OAUTHCLIENT_ID` - This variable is the Genesys Cloud client credential grant Id that CX as Code executes against. 
+   * `GENESYSCLOUD_OAUTHCLIENT_SECRET` - This variable is the Genesys Cloud client credential secret that CX as Code executes against. 
+   * `GENESYSCLOUD_REGION` - This variable is the Genesys Cloud region in your organization.
+
+2. Set the environment variables in the folder where Terraform is running. 
+
+### Configure your Terraform build
+
+* `client_id` - The value of your OAuth Client ID using Client Credentials to be used for the data action integration.
+* `client_secret`- The value of your OAuth Client secret using Client Credentials to be used for the data action integration.
+
+```
+client_id       = "your-client-id"
+client_secret   = "your-client-secret"
+account_id      = "12345678"
+division_id     = "12345678-1234-1234-1234-001123456789"
+email           = "test.email@genesys.com"
+```
+
+### Run Terraform
+
+The blueprint solution is now ready for your organization to use. 
+
+1. Change to the **/terraform** folder and issue the following commands:
+
+   * `terraform init` - This command initializes a working directory containing Terraform configuration files.  
+   * `terraform plan` - This command executes a trial run against your Genesys Cloud organization and displays a list of all the Genesys Cloud resources Terraform created. Review this list and make sure that you are comfortable with the plan before you continue to the next step.
+   * `terraform apply --auto-approve` - This command creates and deploys the necessary objects in your Genesys Cloud account. The `--auto-approve` flag provides the required approval before the command creates the objects.
+
+After the `terraform apply --auto-approve` command successfully completes, you can see the output of the command's entire run along with the number of objects that Terraform successfully created. Keep the following points in mind:
+
+   * This project assumes that you run this blueprint solution with a local Terraform backing state, which means that the `tfstate` files are created in the same folder where you run the project. Terraform recommends that you use local Terraform backing state files **only** if you run from a desktop or are comfortable deleting files.
+
+   * As long as you keep your local Terraform backing state projects, you can tear down this blueprint solution. To tear down the solution, change to the `docs/terraform` folder and issue the  `terraform destroy --auto-approve` command. This command destroys all objects that the local Terraform backing state currently manages.
+
+## Configure Genesys Cloud manually
 
 ### Create a private app on HubSpot and obtain access token
 
@@ -351,5 +376,3 @@ Worflow get the JSON data, and send a email to a User.
 2. Create a trigger
 
 3. Assign workitem to Queue in workflow
-
-### Terraform Configuration for Genesys Cloud objects
