@@ -10,15 +10,15 @@ variable "client_secret" {
 
 variable "account_id" {
   type        = string
-  description = "account id"
+  description = "The Account ID to be used by Integration"
 }
 
 variable "division_id" {
   type        = string
-  description = "division id"
+  description = "The Division ID to be used by Task Management"
 }
 
 variable "email" {
   type        = string
-  description = "email"
+  description = "The Account Email address to be used by Groups"
 }

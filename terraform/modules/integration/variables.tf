@@ -1,4 +1,9 @@
 variable "group_id" {
   type        = string
-  description = "The OAuth (Client Credentails) Client ID to be used by Data Actions"
+  description = "The Group ID to be used for creating Integration"
+}
+
+variable "account_id" {
+  type        = string
+  description = "The Account ID to be used for creating Integration"
 }

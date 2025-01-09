@@ -1,4 +1,4 @@
 variable "division_id" {
   type        = string
-  description = "division id"
+  description = "The Division ID to be used for creating workbin"
 }

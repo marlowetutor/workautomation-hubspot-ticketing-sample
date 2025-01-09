@@ -54,6 +54,9 @@ Clone the [workautomation-hubspot-ticketing-sample repository](https://github.co
 
 * `client_id` - The value of your OAuth Client ID using Client Credentials to be used for the data action integration.
 * `client_secret`- The value of your OAuth Client secret using Client Credentials to be used for the data action integration.
+* `account_id`- The value of your account id created on HubSpot for creating integration.
+* `division_id`- The value of your Division ID  to be used for creating task management objects.
+* `email`- The value of your account email address ID to be used for creating group.
 
 ```
 client_id       = "your-client-id"

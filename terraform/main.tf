@@ -40,13 +40,14 @@ module "create_worktype" {
   source             = "./modules/worktype"
   division_id        = var.division_id
   workbin_id         = module.create_workbin.workbin_id
-  schema_id             = module.create_schemaattributes.schema_id
+  schema_id          = module.create_schemaattributes.schema_id
   depends_on         = [module.create_workbin, module.create_schemaattributes]
 }
 
 // Add Integration for creating HubSpot tickets
 module "create_integration" {
    source             = "./modules/integration"
+   account_id         = var.account_id
    group_id           = module.create_group.group_id
    depends_on         = [module.create_group]
 }
