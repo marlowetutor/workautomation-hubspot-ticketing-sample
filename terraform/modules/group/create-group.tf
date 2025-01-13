@@ -1,5 +1,5 @@
 resource "genesyscloud_group" "sample_group" {
-  name          = "Hubspot Group"
+  name          = "MCT Hubspot Group"
   description   = "Group for Testers"
   type          = "official"
   visibility    = "public"
